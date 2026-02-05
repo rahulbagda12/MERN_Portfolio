@@ -159,23 +159,23 @@
 }
 
 @keyframes socialBounce {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(-8px) rotate(10deg);
     }
+
     25% {
         transform: translateY(-16px) rotate(10deg);
     }
+
     50% {
         transform: translateY(-10px) rotate(10deg);
     }
+
     75% {
         transform: translateY(-14px) rotate(10deg);
     }
-}
-    background: var(--color-primary);
-    border-color: var(--color-primary);
-    color: white;
-    transform: translateY(-4px);
 }
 
 .contact-form {

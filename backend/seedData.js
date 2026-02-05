@@ -135,33 +135,34 @@ const skillsData = [
   { name: 'PHP', category: 'backend', proficiency: 75, order: 2 },
   { name: 'C', category: 'other', proficiency: 70, order: 3 },
   { name: 'JavaScript', category: 'frontend', proficiency: 80, order: 4 },
-  
+
   // Web Development
   { name: 'HTML', category: 'frontend', proficiency: 95, order: 5 },
   { name: 'CSS', category: 'frontend', proficiency: 95, order: 6 },
   { name: 'WordPress', category: 'other', proficiency: 80, order: 7 },
   { name: 'ASP.NET', category: 'backend', proficiency: 70, order: 8 },
-  
+
   // Frameworks
   { name: 'Node.js', category: 'backend', proficiency: 85, order: 9 },
   { name: 'Express.js', category: 'backend', proficiency: 85, order: 10 },
   { name: 'React', category: 'frontend', proficiency: 85, order: 11 },
   { name: 'Bootstrap', category: 'frontend', proficiency: 90, order: 12 },
   { name: 'ASP.NET MVC', category: 'backend', proficiency: 70, order: 13 },
-  
+
   // Technologies
   { name: 'AWS', category: 'devops', proficiency: 60, order: 14 },
+  { name: 'VERCEL', category: 'devops', proficiency: 60, order: 14 },
   { name: 'OpenCV', category: 'other', proficiency: 75, order: 15 },
   { name: 'Raspberry Pi', category: 'other', proficiency: 70, order: 16 },
-  
+
   // Database
   { name: 'MongoDB', category: 'database', proficiency: 85, order: 17 },
   { name: 'MySQL', category: 'database', proficiency: 75, order: 18 },
-  
+
   // Mobile & IoT
   { name: 'Android Development', category: 'mobile', proficiency: 75, order: 19 },
   { name: 'IoT Systems', category: 'other', proficiency: 70, order: 20 },
-  
+
   // Additional Skills
   { name: 'Event Monitoring', category: 'other', proficiency: 85, order: 21 },
   { name: 'CarSim', category: 'other', proficiency: 75, order: 22 }
@@ -175,7 +176,7 @@ async function seedDatabase() {
       useNewUrlParser: true,
       useUnifiedTopology: true
     });
-    
+
     console.log('Connected to MongoDB');
 
     // Clear existing data
@@ -184,7 +185,7 @@ async function seedDatabase() {
     await Experience.deleteMany({});
     await Project.deleteMany({});
     await Skill.deleteMany({});
-    
+
     console.log('Cleared existing data');
 
     // Insert new data

@@ -24,12 +24,27 @@ const Contact = () => {
         setLoading(true);
         setStatus({ type: '', message: '' });
 
+        // Format message for WhatsApp
+        const whatsappMessage = `*New Inquiry from Portfolio*\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Subject:* ${formData.subject}\n*Message:* ${formData.message}`;
+        const phoneNumber = "918153828474"; // Your number
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
         try {
-            await axios.post('http://localhost:5000/api/contact', formData);
+            // Optional: try to save to database first
+            try {
+                await axios.post('http://localhost:5000/api/contact', formData);
+            } catch (err) {
+                console.error("Backend submission failed, proceeding with WhatsApp", err);
+            }
+
             setStatus({
                 type: 'success',
-                message: 'Thank you! Your message has been sent successfully.'
+                message: 'Opening WhatsApp to send your message...'
             });
+
+            // Redirect to WhatsApp
+            window.open(whatsappUrl, '_blank');
+
             setFormData({ name: '', email: '', subject: '', message: '' });
         } catch (error) {
             setStatus({
